@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" type="image/png" href="/assets/designs/Images/logo.png?v=3">
+    <title>GINO</title>
+</head>
+<body>
+    
+ <nav class="navbar">
+  <div class="logo">&lt;/JF&gt;</div>
+  <div class="burger" id="burger">&#9776;</div> <!-- Hamburger Icon -->
+  <ul class="nav-links" id="nav-links">
+    <li><a class="active" href="#">Home</a></li>
+    <li><a href="/app/front/about.html">About</a></li>
+    <li><a href="/app/front/projects.html">Projects</a></li>
+    <li><a href="/app/front/contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+
+
+<div class="flex-container">
+  <div class="left-column">
+    <h1>JUSTINE FRANCISCO</h1> </br>
+    <h3><span class="typing-container" id="type"></span></h3> </br>
+    <p>
+      An IT enthusiast with a solid foundation in graphic design, data management, and web development <a href="/app/front/about.html">see more</a>.
+    </p>
+  </div>
+  <div class="right-column">
+    <img src="assets/designs/Images/justine.png" alt="Example Image">
+  </div>
+</div>
+</body>
+
+<script>
+  const words = [
+    { text: "Web Developer", class: "color-web-dev", cursor: "#00c9c8" },
+    { text: "Graphics Designer", class: "color-graphics", cursor: "hotpink" },
+    { text: "Data Analyst", class: "color-analyst", cursor: "rgb(238, 215, 130)" }
+  ];
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typingSpeed = 120;
+  const erasingSpeed = 60;
+  const delayBetweenWords = 2000;
+  const typeElement = document.getElementById("type");
+
+  function type() {
+    const current = words[wordIndex];
+    const currentWord = current.text;
+
+    // Apply color class
+    typeElement.className = `typing-container ${current.class}`;
+
+    // Update cursor color
+    typeElement.style.borderRight = `2px solid ${current.cursor}`;
+
+    if (isDeleting) {
+      charIndex--;
+      typeElement.textContent = currentWord.substring(0, charIndex);
+    } else {
+      charIndex++;
+      typeElement.textContent = currentWord.substring(0, charIndex);
+    }
+
+    if (!isDeleting && charIndex === currentWord.length) {
+      isDeleting = true;
+      setTimeout(type, delayBetweenWords);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(type, 500);
+    } else {
+      setTimeout(type, isDeleting ? erasingSpeed : typingSpeed);
+    }
+  }
+
+  type();
+
+   const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('nav-links');
+
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+</script>
+
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/about.css">
+    <link rel="icon" type="image/png" href="/assets/designs/Images/logo.png?v=3">
+    <title>About - GINO</title>
+</head>
+<body>
+    
+ <nav class="navbar">
+  <div class="logo">&lt;/JF&gt;</div>
+  <div class="burger" id="burger">&#9776;</div> <!-- Hamburger Icon -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a class="active" href="#">About</a></li>
+    <li><a href="/app/front/projects.html">Projects</a></li>
+    <li><a href="/app/front/contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+
+
+<div class="flex-container">
+  <div class="left-column">
+    <h2>About Me</h2> </br>
+    <p>
+     Hi, I’m <i>JUSTINE FRANCISCO</i>, an IT enthusiast with a solid foundation in graphic design, data management, and web development. 
+     I enjoy combining creativity and technical skills to build visually engaging and data-driven digital solutions. 
+     My background allows me to not only design user-friendly interfaces but also manage and structure data efficiently, and develop responsive, functional websites. 
+     I’m passionate about learning new technologies and continuously improving my skill set to solve real-world problems.
+    </p>
+  </div>
+<div class="right-column">
+ <div class="blob-wrapper">
+  <svg class="string-line" width="100%" height="100%" viewBox="0 0 500 450" preserveAspectRatio="none">
+    <path d="M200,10 Q450, 0 470, 200 Q-300, 800 100, 80" fill="none" stroke="#00fff2" stroke-width="4" stroke-linecap="round" />
+  </svg>
+
+  <div class="blob-img-container">
+    <img src="/assets/designs/Images/img1.png" class="circle img1" />
+    <img src="/assets/designs/Images/img2.png" class="circle img2" />
+    <img src="/assets/designs/Images/img3.png" class="circle img3" />
+  </div>
+</div>
+
+</div>
+
+</div>
+</body>
+
+<script>
+   const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('nav-links');
+
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+</script>
+
+
+</html>
